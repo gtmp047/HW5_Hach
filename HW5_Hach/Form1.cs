@@ -26,7 +26,7 @@ namespace HW5_Hach
             }
             return null;
         }
-        void AddToHash (String str)
+        int AddToHash (String str)
         {
             int value = Math.Abs(str.GetHashCode()) % hashModule;
             switch (mode)
@@ -35,40 +35,56 @@ namespace HW5_Hach
                     if (treeView1.Nodes[value].Text.CompareTo("") == 0)
                     {
                         treeView1.Nodes[value].Text = str;
+                        return 0;
                     }
                     else
                     {
-                        treeView1.Nodes[value].Nodes.Add(str);
+                        if (FindElement(treeView1.Nodes[value].Nodes, str) == null && treeView1.Nodes[value].Text.CompareTo(str) != 0)
+                        {
+                            treeView1.Nodes[value].Nodes.Add(str);
+                            return 1;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Элемент найден");
+                            return -1;
+                        }
                     }
                         break;
                 case 1:
                     if (treeView1.Nodes[value].Text.CompareTo("") == 0)
                     {
                         treeView1.Nodes[value].Text = str;
+                        return 0;
                     }
                     else
                     {
+                        if (treeView1.Nodes[value].Text.CompareTo(str) == 0)
+                        {
+                            MessageBox.Show("Элемент найден");
+                            return -1;
+                        } 
                         for (int i = 0; i < treeView1.Nodes.Count; i++)
+                        {
+                            if(treeView1.Nodes[i].Text.CompareTo("") == 0)
                             {
-                                if(treeView1.Nodes[i].Text.CompareTo("") == 0)
-                                {
-                                    treeView1.Nodes[i].Text = str;
-                                    return;
-                                }
+                                treeView1.Nodes[i].Text = str;
+                                return 1;
                             }
-                        MessageBox.Show("Добавить элемент не удалось, так как все позиции заняты");
+                        }
+                    MessageBox.Show("Добавить элемент не удалось, так как все позиции заняты");
                     }
                     break;
                 default:
                     break;
             }
-
+            return 0;
         }
         void generateDataLine()
         {
             Random rn = new Random(((TimeSpan)(DateTime.Now - new DateTime(1970, 1, 1))).Seconds);
             int count = (int)(sizeOfHash * factorOfFullment);
-            int lenghtOfWord = rn.Next(1, 5);
+            int lenghtOfWord = rn.Next(1, 8);
 
             for (int i = 0; i < count; i++)
             {
@@ -78,7 +94,7 @@ namespace HW5_Hach
                     str += (char)rn.Next((int)'a', (int)'z');
                 }
                 treeView1.Nodes[i].Text = str;
-                lenghtOfWord = rn.Next(1, 5);
+                lenghtOfWord = rn.Next(1, 8);
             }
         }
         void generateData()
@@ -189,7 +205,18 @@ namespace HW5_Hach
         {
             try
             {
-                AddToHash(textBox4.Text);
+                int res = AddToHash(textBox4.Text);
+                switch (res)
+                {
+                    case 0:
+                        MessageBox.Show("Элемент добавлен");
+                        break;
+                    case -1:
+                        MessageBox.Show("Элемент добавлен с разрешением коллизии");
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception ex)
             {

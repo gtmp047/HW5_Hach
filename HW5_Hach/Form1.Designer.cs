@@ -33,23 +33,23 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radiobutton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radiobutton1 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -100,45 +100,15 @@
             this.panel1.Size = new System.Drawing.Size(628, 134);
             this.panel1.TabIndex = 2;
             // 
-            // label2
+            // button4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(79, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Введите  модуль хеша M";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(409, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "X(i) = value % M";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(475, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "10";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(475, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 22);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Text = "10";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.button4.Location = new System.Drawing.Point(267, 94);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(141, 35);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Принять";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox3
             // 
@@ -160,6 +130,46 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Введите степень заполнения хеша при генерации";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(475, 39);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(141, 22);
+            this.textBox2.TabIndex = 4;
+            this.textBox2.Text = "10";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(475, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(141, 22);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "10";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(79, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(221, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Введите  модуль хеша M";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(409, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(174, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "X(i) = value % M";
+            // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 248);
@@ -177,6 +187,18 @@
             this.panel2.Size = new System.Drawing.Size(220, 134);
             this.panel2.TabIndex = 5;
             // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton2.Location = new System.Drawing.Point(3, 67);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(210, 24);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Открытая адресация";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // radiobutton1
             // 
             this.radiobutton1.AutoSize = true;
@@ -190,18 +212,6 @@
             this.radiobutton1.Text = "Цепочки";
             this.radiobutton1.UseVisualStyleBackColor = true;
             this.radiobutton1.CheckedChanged += new System.EventHandler(this.radiobutton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(3, 67);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(210, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Открытая адресация";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // button1
             // 
@@ -237,7 +247,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 23);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Добавить";
+            this.button2.Text = "Найти";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -250,16 +260,6 @@
             this.button3.Text = "Очистить хеш";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(267, 94);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 35);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Принять";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
